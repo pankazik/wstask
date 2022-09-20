@@ -1,0 +1,48 @@
+html
+    head 
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css')
+            link(rel='shortcut icon' type='/image/png' href='/img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js") 
+            title Start
+
+    body 
+        header.header
+
+        block content
+            
+            .p-5.bg-primary.text-white.text-centerp-5.bg-primary.text-white.text-center
+                h1 Node.js Task
+            nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+                .container-fluid 
+                    ul.navbar-nav
+                        li.nav-item 
+                            a.nav-link.active(href="#") Home
+
+            .container.mt-5
+                .row
+                    .col-sm-2
+                        form#form.form-horizontal
+                            .form-group.input-group
+                                .input-group-prepend
+                                    label(for="global") Global? 
+                                    input#global.form-outline.mb-4(type="checkbox", name="global")
+                            .form-group.input-group
+                                .input-group-prepend
+                                    label(for="dataFrom") Data  
+                                    input#od-form.form-outline.mb-4(type="date", name="dataFrom")
+                            .form-group.input-group
+                                .input-group-prepend
+                                    input#submit-req.form-outline.mb-4(type="submit", value="Wyslij")
+                    .col-sm-8.chart
+                        canvas#dataChart
+
+        .mt-5.p-4.bg-dark.text-white.text-center
+            footer.footer Radosław Kazimierczuk ©#{new Date(Date.now()).getFullYear()}
+
+        script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js')
+        script(src='/js/scripts.js')

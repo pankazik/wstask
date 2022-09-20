@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS wamasoft;
+USE wamasof;
+CREATE TABLE IF NOT EXISTS bramki (bramka_id INT AUTO_INCREMENT PRIMARY KEY , bramka_name VARCHAR(20));
+CREATE TABLE IF NOT EXISTS wejscia (wejscie_id INT AUTO_INCREMENT PRIMARY KEY , kierunek ENUM('in','out'), bramka_id INT, data DATETIME,CONSTRAINT FK_BramkaWejscie FOREIGN KEY (bramka_id) REFERENCES bramki(bramka_id));
